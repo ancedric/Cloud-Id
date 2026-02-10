@@ -9,11 +9,6 @@ const hot = computed(() => store.withScore.filter((p) => p.score >= 70).length)
 
 <template>
   <div class="space-y-6">
-    <section class="bg-white rounded-lg shadow p-4 text-sm">
-      <p><strong>Mode de sauvegarde:</strong> <span class="uppercase font-semibold">{{ store.storageMode }}</span></p>
-      <p v-if="store.loading" class="text-slate-500 mt-1">Chargement des prospects...</p>
-      <p v-else class="text-slate-500 mt-1">Données synchronisées.</p>
-    </section>
     <section class="grid grid-cols-1 md:grid-cols-3 gap-3">
       <article class="bg-white rounded-lg shadow p-4"><p class="text-sm text-slate-500">Prospects total</p><p class="text-2xl font-bold">{{ total }}</p></article>
       <article class="bg-white rounded-lg shadow p-4"><p class="text-sm text-slate-500">Prospects chauds</p><p class="text-2xl font-bold">{{ hot }}</p></article>
